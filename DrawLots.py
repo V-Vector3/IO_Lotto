@@ -9,9 +9,11 @@ products = {'꽝': 69.89,
             '200000원': 0.1,
             '1000000원': 0.01
             }
+
+
 def MainLot():
-# 총 추첨 수
-    count=1
+    # 총 추첨 수
+    count = 1
 
     productrange = []
     productresult = []
@@ -25,20 +27,15 @@ def MainLot():
             productresult.append(product)
             productrange.append(productrange[-1] + products[product])
 
-
     for j in range(0, count):
-        tempresult = random.randrange(1,productrange[-1]+1)
+        tempresult = random.randrange(1, productrange[-1]+1)
         tempcnt = 0
         for i in productrange:
-            #print('i',i)
+            # print('i',i)
             if tempresult <= i:
                 return productresult[tempcnt]
             else:
-                tempcnt=tempcnt+1
+                tempcnt = tempcnt+1
+
+
 MainLot()
-def Debug():
-    try:
-        MainLot()
-        print(MainLot)
-    except:
-        print("error")
